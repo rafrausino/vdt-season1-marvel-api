@@ -32,7 +32,7 @@
 - [ ] Deve poder buscar por personagem por nome
 - [ ] Deve poder buscar personagem pelo id
 - [ ] Deve retornar 404 ao buscar por id não cadastrado
-
+    
 ### Remover Personagem
 
 - [ ] Deve poder remover por id, um personagem cadastrado
