@@ -1,26 +1,10 @@
+
+
 describe('POST /characters', function() {
 
   before(function(){
-    cy.request({
-      method: 'POST',
-      url: '/sessions',
-      body: {
-        email: 'renan@qacademy.io',
-        password: 'qa-cademy'
-      }
-    }).then(function(response){
-      expect(response.status).to.eql(200)
-      cy.log(response.body.token);
-      Cypress.env('token', response.body.token)
-    })
-
-    cy.request({
-      method: 'DELETE',
-      url: 'back2thepast/629e58a162354f001624ee95'
-    }).then(function(response) {
-      expect(response.status).to.eql(200)
-    })
-
+    cy.back2ThePast()
+    cy.setToken()
   })
 
   it('deve cadastrar um personagem', function() {
@@ -42,7 +26,10 @@ describe('POST /characters', function() {
 
     }).then(function(response){
       expect(response.status).to.eql(201)
+      cy.log(response.body)
     })
   })
 })
+
+
 
